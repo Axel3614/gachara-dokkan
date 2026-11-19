@@ -37,7 +37,7 @@ jobs:
         run: node banner-nuovi.mjs
       - name: Sul sito
         run: |
-          git add --sparse -A banners images .banner-mancanti.json 2>/dev/null || git add --sparse -A .banner-mancanti.json
+          git add --sparse -A
           if git diff --cached --quiet; then echo "niente di nuovo"; exit 0; fi
           git -c user.name="Gachara" -c user.email="noreply@github.com" commit -q -m "Banner nuovi $(date -u +%Y-%m-%dT%H:%MZ)"
           git push -q
